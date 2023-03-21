@@ -31,7 +31,7 @@ useEffect(() => {
         
           {user.map((user, index) => {
             return <UserCards 
-              pic={user.picture.medium}
+              pic={user.picture.large}
               first={user.name.first}
               last={user.name.last}
               gender={user.gender}

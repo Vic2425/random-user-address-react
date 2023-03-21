@@ -1,25 +1,48 @@
-import React from 'react';
+import React from "react";
+import "./App.css";
 
 function UserCards(props) {
-    const { pic, first, last, gender, age, email, city, index, isHidden, curUser, handleClick } = props;
+  const {
+    pic,
+    first,
+    last,
+    gender,
+    age,
+    email,
+    city,
+    index,
+    isHidden,
+    curUser,
+    handleClick,
+  } = props;
 
-    return (
-        <div>
-            <img src={pic} alt='user img'/>
-            <h4>{first} {last}</h4>
-            <p>Gender: {gender}</p>
-            {isHidden && curUser === index ?                     
-                <div>
-                  <p>Age: {age}</p>
-                  <p>Email: {email}</p>
-                  <p>City: {city}</p>
-                </div> : <div></div> 
-            }
-            <button onClick={() => handleClick(index)} >
-                {isHidden && curUser === index ? 'Hide info' : 'Show more'}
-            </button>
+  return (
+    <div className="container">
+      <div className="card">
+        <div className="img">
+          <img src={pic} alt="user img" />
         </div>
-    )
+        <div className="content">
+          <h5>
+            {first} {last}
+          </h5>
+          <p>Gender: {gender}</p>
+          {isHidden && curUser === index ? (
+            <ul>
+              <li>Age: {age}</li>
+              <li>Email: {email}</li>
+              <li>City: {city}</li>
+            </ul>
+          ) : (
+            <div></div>
+          )}
+          <button onClick={() => handleClick(index)}>
+            {isHidden && curUser === index ? "Hide info" : "Show more"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default UserCards;
