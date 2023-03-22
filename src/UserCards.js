@@ -19,25 +19,36 @@ function UserCards(props) {
   return (
     <div className="container">
       <div className="card">
+        <div className="top"></div>
         <div className="img">
           <img src={pic} alt="user img" />
         </div>
-        <div className="content">
+        <div className="divOne">
           <h5>
             {first} {last}
           </h5>
-          <p>Gender: {gender}</p>
+          <h6>{email} </h6>
+        </div>
+        <div className="divTwo">
           {isHidden && curUser === index ? (
-            <ul>
-              <li>Age: {age}</li>
-              <li>Email: {email}</li>
-              <li>City: {city}</li>
-            </ul>
+            <div>
+              <h6>
+                <span>Age:</span> {age}
+              </h6>
+              <h6>
+                <span>Gender:</span> {gender}
+              </h6>
+              <h6>
+                <span>City:</span> {city}
+              </h6>
+            </div>
           ) : (
             <div></div>
           )}
+        </div>
+        <div className="btn">
           <button onClick={() => handleClick(index)}>
-            {isHidden && curUser === index ? "Hide info" : "Show more"}
+            {isHidden && curUser === index ? "Hide Info" : "Show Info"}
           </button>
         </div>
       </div>
