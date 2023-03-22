@@ -35,6 +35,7 @@ useEffect(() => {
               first={user.name.first}
               last={user.name.last}
               gender={user.gender}
+              age={user.dob.age}
               email={user.email}
               city={user.location.city}
               index={index}
